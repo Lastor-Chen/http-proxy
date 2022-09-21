@@ -39,7 +39,7 @@ $ npx degit Lastor-Chen/http-proxy
 
 安裝依賴
 ```
-$ yarn
+$ pnpm i
 ```
 
 在 `proxy.js` 設定自己的 `proxyTarget`
@@ -53,9 +53,9 @@ const proxyTarget = {
 
 啟動 proxy server
 ```shell
-$ yarn start
+$ pnpm start
 or
-$ yarn dev
+$ pnpm dev
 ```
 
 ## CORS 設定
