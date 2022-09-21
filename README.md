@@ -42,10 +42,13 @@ $ npx degit Lastor-Chen/http-proxy
 $ yarn
 ```
 
-在 `proxy.js` 設定自己的 `API_HOST`, `API_PATH`
+在 `proxy.js` 設定自己的 `proxyTarget`
 ```javascript
-const API_HOST = 'http://[host_name]'
-const API_PATH = '/api/path'
+// input your API target path
+const proxyTarget = {
+  route: '/api',  // e.g. "/api"
+  host: 'http://localhost', // e.g. "https://www.my-api-host.com"
+}  
 ```
 
 啟動 proxy server
