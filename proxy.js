@@ -33,13 +33,12 @@ const option = {
   changeOrigin: true, // 不開 true, queryString 會拿不到
   logLevel: 'debug',
   onProxyReq: fixRequestBody, // 如前面有做 bodyParser 則需 fix
-  onProxyRes: (proxyRes, req, res) => {
-    // 自身允許 CORS
-    proxyRes.headers['Access-Control-Allow-Headers'] = '*'
-
+  onProxyRes(proxyRes, req, res) {
     // 有設 withCredentials 的話, Access-Control-Allow-Origin 不得為 *, 需重設 origin
     const origin = req.headers.origin
     proxyRes.headers['Access-Control-Allow-Origin'] = origin
+    proxyRes.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+    proxyRes.headers['Access-Control-Allow-Credentials'] = true
   },
 }
 
